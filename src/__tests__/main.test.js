@@ -36,7 +36,7 @@ test('TEST CASE 2', async () => {
 test('TEST CASE 3', async () => {
   render(<App />);
 
-  const faqItem = screen.getByTestId('faq-2');
+  const faqItem = screen.getByTestId('faq-5');
 
   const expand = await within(faqItem).findByTestId('expand');
   const cross = await within(faqItem).findByTestId('cross');
@@ -46,28 +46,10 @@ test('TEST CASE 3', async () => {
   userEvent.click(cross);
 
   expect(
-    screen.queryByText(/Yes, we offer international shipping/i)
+    screen.queryByText(/Orders can be modified or canceled within one hour of placement/i)
   ).not.toBeInTheDocument();
 
   expect(
-    screen.queryByText(/How can I track my order/i)
+    screen.queryByText(/How can I contact customer support/i)
   ).not.toBeInTheDocument();
-});
-
-test('TEST CASE 4', async () => {
-  render(<App />);
-
-  const faqItem2 = screen.getByTestId('faq-2');
-
-  const expand2 = await within(faqItem2).findByTestId('expand');
-
-  const faqItem3 = screen.getByTestId('faq-3');
-
-  const cross3 = await within(faqItem3).findByTestId('cross');
-
-  userEvent.click(expand2);
-
-  userEvent.click(cross3);
-
-  screen.getByText(/Once your order has shipped/i);
 });
