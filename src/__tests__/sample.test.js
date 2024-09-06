@@ -18,7 +18,7 @@ test('should remove FAQ item when the cross button is clicked on card', async ()
 });
 
 test('should expand FAQ content when the + button is clicked and collapse it when the - button is clicked', async () => {
-  render(<FAQList />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-2');
 
@@ -36,7 +36,7 @@ test('should expand FAQ content when the + button is clicked and collapse it whe
 });
 
 test('should not expand the next FAQ item after the current FAQ is deleted', async () => {
-  render(<FAQList />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-2');
 
@@ -57,7 +57,7 @@ test('should not expand the next FAQ item after the current FAQ is deleted', asy
 });
 
 test('should retain the expanded state of an FAQ item when a different FAQ item is deleted', async () => {
-  render(<FAQList />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem2 = screen.getByTestId('faq-2');
 
