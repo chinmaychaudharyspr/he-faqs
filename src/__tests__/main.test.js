@@ -1,10 +1,11 @@
-import App from '../App';
+import { FAQList } from '../components/faqList';
 import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import { MOCK_FAQS } from '../mock';
 
 test('TEST CASE 1', async () => {
-  render(<App />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-1');
 
@@ -16,7 +17,7 @@ test('TEST CASE 1', async () => {
 });
 
 test('TEST CASE 2', async () => {
-  render(<App />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-2');
 
@@ -34,7 +35,7 @@ test('TEST CASE 2', async () => {
 });
 
 test('TEST CASE 3', async () => {
-  render(<App />);
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-5');
 
@@ -46,7 +47,9 @@ test('TEST CASE 3', async () => {
   userEvent.click(cross);
 
   expect(
-    screen.queryByText(/Orders can be modified or canceled within one hour of placement/i)
+    screen.queryByText(
+      /Orders can be modified or canceled within one hour of placement/i
+    )
   ).not.toBeInTheDocument();
 
   expect(
