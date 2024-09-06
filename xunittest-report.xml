@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="2.16">
-  <testsuite name="src/__tests__/main.test.js" errors="0" failures="0" skipped="0" timestamp="2024-08-26T08:29:39" time="1.615" tests="4">
-    <testcase classname="" name="should delete faq on clicking cross button" time="0.067">
+<testsuites name="jest tests" tests="3" failures="3" errors="0" time="1.596">
+  <testsuite name="src/__tests__/main.test.js" errors="0" failures="3" skipped="0" timestamp="2024-09-06T07:36:58" time="1.248" tests="3">
+    <testcase classname="" name="TEST CASE 1" time="0.093">
+      <failure>Error: expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found &lt;div class=&quot;border-gray-400 border rounded-lg p-3&quot; data-testid=&quot;faq-1&quot; id=&quot;faq-1&quot;&gt;&lt;div class=&quot;flex&quot;&gt;&lt;div class=&quot;flex-none pr-2&quot;&gt;&lt;button class=&quot;text-xl leading-5 w-4&quot; data-testid=&quot;expand&quot;&gt;+&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;flex-1&quot;&gt;&lt;div&gt;What is your return policy?&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;flex-none&quot;&gt;&lt;button class=&quot;border border-gray-400 bg-slate-200 w-6 h-6 rounded-full top-2 right-2&quot; data-testid=&quot;cross&quot;&gt;X&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; instead
+    at call (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:16:45)
+    at tryCatch (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator._invoke (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator.next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at asyncGeneratorStep (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at _next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)</failure>
     </testcase>
-    <testcase classname="" name="should expand faq on clicking + &amp; collapse on -" time="0.025">
+    <testcase classname="" name="TEST CASE 2" time="0.02">
+      <failure>Error: expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found &lt;div class=&quot;px-5 py-0&quot;&gt;Once your order has shipped, you will receive a confirmation email with a tracking number. You can use this tracking number on our website to check the status of your delivery.&lt;/div&gt; instead
+    at call (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:34:9)
+    at tryCatch (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator._invoke (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator.next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at asyncGeneratorStep (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at _next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)</failure>
     </testcase>
-    <testcase classname="" name="should expand faq on clicking + &amp; next item should not expand on deletion" time="0.022">
-    </testcase>
-    <testcase classname="" name="expand state should not change on different element deletion" time="0.019">
+    <testcase classname="" name="TEST CASE 3" time="0.016">
+      <failure>Error: expect(element).not.toBeInTheDocument()
+
+expected document not to contain element, found &lt;div&gt;How can I contact customer support?&lt;/div&gt; instead
+    at call (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:57:9)
+    at tryCatch (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator._invoke (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at Generator.next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at asyncGeneratorStep (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)
+    at _next (/Users/ajay.bhardwaj/code/he-faqs/src/__tests__/main.test.js:2:1)</failure>
     </testcase>
   </testsuite>
 </testsuites>

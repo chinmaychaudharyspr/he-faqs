@@ -1,10 +1,12 @@
-import App from '../App';
-import { render, screen, within } from '@testing-library/react';
+import { FAQList } from '../components/faqList';
+import { act, render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
-test('should delete faq on clicking cross button', async () => {
-  render(<App />);
+import { MOCK_FAQS } from '../mock';
+
+test('should remove FAQ item when the cross button is clicked on card', async () => {
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-1');
 
@@ -15,8 +17,8 @@ test('should delete faq on clicking cross button', async () => {
   expect(screen.queryByTestId('faq-1')).not.toBeInTheDocument();
 });
 
-test('should expand faq on clicking + & collapse on -', async () => {
-  render(<App />);
+test('should expand FAQ content when the + button is clicked and collapse it when the - button is clicked', async () => {
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-2');
 
@@ -33,8 +35,8 @@ test('should expand faq on clicking + & collapse on -', async () => {
   ).not.toBeInTheDocument();
 });
 
-test('should expand faq on clicking + & next item should not expand on deletion', async () => {
-  render(<App />);
+test('should not expand the next FAQ item after the current FAQ is deleted', async () => {
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem = screen.getByTestId('faq-2');
 
@@ -54,8 +56,8 @@ test('should expand faq on clicking + & next item should not expand on deletion'
   ).not.toBeInTheDocument();
 });
 
-test('expand state should not change on different element deletion', async () => {
-  render(<App />);
+test('should retain the expanded state of an FAQ item when a different FAQ item is deleted', async () => {
+  render(<FAQList faqs={MOCK_FAQS} />);
 
   const faqItem2 = screen.getByTestId('faq-2');
 
